@@ -4,9 +4,17 @@
 - INSTA
 - REOSURCE URL
 - SHORTNER
+- Encoder and Decoder GENERATOR
 - COPYRIGHT GENERATOR
+- - [Contains Current Date, Copyright, And Your Name, Copy Minified HTML Code]
+- - Format = HTML, React JS, Python, Java, Rust, ASP.NET
 
-## PO;ICY GENERATOR
+## POLICY GENERATOR
+
+- Privacy Policy Generator
+- Terms & Conditions Policy Generator
+- Return Policy Generator
+- Cookie Policy Generator
 
 ## HTML TEMPLATE GENERATOR
 
