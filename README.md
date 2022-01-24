@@ -9,6 +9,12 @@
 
 ## HTML TEMPLATE GENERATOR
 
+- Creates a template of HTML tag, like:
+  `<hello></hello>`
+  `code here in js downloadable`
+  `html data`
+  `attribute image and input as tick marks to enable it`
+
 # Whatsapp-Message-Maker
 
 Creates your custom messeages on whatsapp.
