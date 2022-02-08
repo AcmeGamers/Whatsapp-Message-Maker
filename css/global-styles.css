@@ -1,0 +1,461 @@
+:root {
+  /* Tables */
+  --table_main-width: 61%;
+  --table_side-widths: 13%;
+
+  /* Policy's Sizing */
+  --policies-height: 340px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden !important;
+  font-family: var(--main-font);
+  font-size: 15px;
+}
+/* 
+======
+Header 
+====== 
+*/
+
+#logo {
+  color: #fff;
+  font-family: var(--main-font);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+/* Notification in Header */
+.level_1-background {
+  justify-content: space-between;
+  background-color: var(--theme-color);
+  padding: 15px;
+}
+
+.sideways-notification > div > p {
+  margin: 0;
+  position: absolute;
+  color: #fff;
+  margin-top: -7px;
+  visibility: hidden;
+  width: 200%;
+
+  /* animtion */
+  animation: slide_animation 15s infinite;
+  animation-delay: 2s;
+}
+.sideways-notification > div {
+  background: var(--theme-color-depth-v1);
+  padding: 17px;
+}
+
+nav-bar > ul {
+  background: var(--theme-color-depth-v2);
+  margin: 0;
+}
+nav-bar > ul > li {
+  display: block;
+  transition: var(--ease_p5_s);
+  padding: 1em 0;
+}
+nav-bar > ul > li:hover {
+  background: var(--theme-color-depth-v1);
+}
+nav-bar > ul > li > a {
+  padding: 1em;
+}
+
+nav-bar > ul > li > a {
+  color: #fff;
+}
+nav-bar > ul > li > a.active {
+  background: #2a9ae9;
+}
+
+/* Mobile Navbar */
+.navbar {
+  overflow: hidden;
+  background-color: var(--theme-color-depth-v2);
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.navbar a div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-bottom: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+
+/* Home Page */
+/* .container {
+} */
+
+#side-1 {
+  width: 25vw;
+}
+
+#side-2 {
+  width: 50vw;
+  padding: 0 2rem;
+}
+#side-3 {
+  width: 25vw;
+}
+/* Side Boxes */
+.home_side_box {
+  position: sticky;
+  top: 0;
+  /* top: 28vh; */
+  height: 60vh;
+  border: 1px solid rgb(112 112 112 / 35%);
+  box-shadow: 4px 6px 12px rgb(0 0 0 / 7%);
+}
+
+.side_box_header {
+  padding: 10px 20px;
+}
+.side_box_button > ul {
+  margin: 0;
+  padding: 0;
+}
+.side_box_button > ul > li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: var(--border-color-light-black);
+  transition: var(--ease_p5_s);
+  cursor: pointer;
+}
+.side_box_button > ul > li:hover {
+  background: var(--grey);
+}
+
+/* Owl Carousel */
+.owl-dots {
+  position: absolute;
+  bottom: 0;
+  left: 18vw;
+  right: 20vw;
+}
+
+/* 
+======
+Tables
+======
+ */
+
+/* Headers */
+#score_header > div {
+  font-weight: 800;
+  font-family: var(--main-font);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+#score_header > div:nth-child(1) {
+  text-align: center;
+}
+
+#score_header > div:nth-child(1),
+#score_table > div > div:nth-child(1) {
+  width: var(--table_main-width);
+}
+
+#score_header > div:nth-child(2),
+#score_header > div:nth-child(3),
+#score_header > div:nth-child(4),
+#score_table > div > div:nth-child(2),
+#score_table > div > div:nth-child(3),
+#score_table > div > div:nth-child(4) {
+  width: var(--table_side-widths);
+  text-align: center;
+}
+
+#score_header {
+  background: var(--grey);
+  padding: 5px 0;
+}
+
+#score_table > div {
+  padding: 5px;
+  border-top: var(--border-color-light-black);
+  border-left: var(--border-color-light-black);
+  border-right: var(--border-color-light-black);
+}
+
+#score_table > div > div {
+  justify-content: center;
+}
+
+.blue_box {
+  background: var(--theme-color);
+  padding: 3px 10px;
+}
+.pink_box {
+  background: var(--pink);
+  padding: 3px 10px;
+}
+#score_table div div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#score_table .row {
+  align-items: center;
+  transition: var(--ease_p2_s);
+}
+#score_table .row:hover {
+  background: var(--grey);
+}
+#score_table > div > div:nth-child(1) > div > span {
+  display: inline-block;
+}
+
+/* Name */
+#score_table > div > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) {
+  width: calc(var(--table_main-width) * 1);
+  color: blue;
+  font-weight: 700;
+}
+
+/* Date And Time */
+#score_table > div > div:nth-child(1) > div:nth-child(1) > div {
+  width: calc(var(--table_main-width) * 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Second Column Before Column '1' */
+#score_table > div > div:nth-child(1) > div:nth-child(1) {
+  width: calc(var(--table_main-width) * 1.3);
+}
+#score_table > div > div:nth-child(1) > div:nth-child(2) {
+  display: flex;
+  width: calc(var(--table_main-width) * 0.3);
+  justify-content: center;
+}
+
+/* #score_table > div > div:nth-child(1) > div > span:nth-child(2) {
+  width: calc(var(--table_main-width) * 0.4);
+  color: var(--light-text-grey);
+}
+#score_table > div > div:nth-child(1) > div > span:nth-child(3) {
+  width: calc(var(--table_main-width) * 0.2);
+  color: var(--light-text-grey);
+} */
+
+#score_table > div > div:nth-child(1) > div:nth-child(2) > span:nth-child(1) {
+  width: calc(var(--table_main-width) * 0.2);
+  background: var(--theme-color);
+  padding: 3px 10px;
+}
+#score_table > div > div:nth-child(1) > div:nth-child(2) > span:nth-child(2) {
+  width: calc(var(--table_main-width) * 0.2);
+  background: var(--pink);
+  padding: 3px 10px;
+}
+
+/*  */
+
+#support_tab > div {
+  display: flex;
+  align-items: center;
+}
+#support_tab > div > i {
+  padding-right: 5px;
+}
+
+.support > a:nth-child(1) > span {
+  border-left: none;
+}
+.support > a > span {
+  padding: 0 15px;
+  border-left: 1px solid black;
+  line-height: 2.4;
+}
+
+/* 
+=================
+Marquee Animation
+=================
+*/
+.marquee {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background: var(--theme-color-depth-v1);
+  color: #fff;
+}
+
+.marquee p {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -moz-animation: scroll-left 20s linear infinite;
+  -webkit-animation: scroll-left 20s linear infinite;
+  animation: scroll-left 20s linear infinite;
+}
+
+@-moz-keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes scroll-left {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+/* 
+=====
+Links
+=====
+*/
+#links {
+  justify-content: center;
+}
+#links > a {
+  cursor: pointer;
+}
+
+/* 
+==============
+Privacy Policy 
+==============
+*/
+
+privacy-policy {
+  /* Position */
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 5rem;
+  z-index: 9999;
+
+  /* Display */
+  display: flex;
+  justify-content: center;
+
+  /* Properties */
+  width: 100%;
+  height: var(--policies-height);
+
+  /* Animation */
+  animation: fadeInDown 1s;
+}
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.policy {
+  left: 0;
+  width: 100%;
+  height: 250%;
+  background: rgb(0 0 0 / 60%);
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.policy > privacy-policy > div {
+  width: 500px;
+  background: #fff;
+}
+.policy > privacy-policy > div > div:nth-child(1) {
+  padding: 8px 5px;
+  overflow-y: scroll;
+  height: calc(var(--policies-height) * 0.8);
+}
+
+.policy > privacy-policy > div > div > h2 {
+  font-size: 16px;
+}
+.policy > privacy-policy > div > div > h2,
+.policy > privacy-policy > div > div > h3,
+.policy > privacy-policy > div > div > h4,
+.policy > privacy-policy > div > div > h5 {
+  /* Font Style */
+  color: #243a48;
+  font-family: Tahoma, Helvetica, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+
+  /* Positioning and Background */
+  background: var(--light-grey);
+  margin: 2px;
+  padding: 4px;
+}
+
+.policy > privacy-policy > div > div:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  width: inherit;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.policy > privacy-policy > div > div:nth-child(2) > button {
+  padding: 5px 45px;
+}
