@@ -1,3 +1,5 @@
+<!-- encodeURIComponent('test?') -->
+
 # aDD FIFFERENT TYPES OF GENERATOR
 
 - WHATSAPP
