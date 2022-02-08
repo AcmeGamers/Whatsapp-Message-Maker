@@ -17,7 +17,7 @@
           <div class="message left-side">
             <input type="text" placeholder="Phone Number" id="number" />
             <input type="text" placeholder="Message" id="message" />
-            <input type="text" placeholder="Links" id="link" />
+            <input type="text" placeholder="Links" id="links" />
             <input type="text" placeholder="Image" image="image" />
           </div>
         </div>
@@ -31,10 +31,8 @@
             https://api.whatsapp.com/send?phone=<span id="out_phone">phone</span
             >&text=<span id="out_message">message</span>&source_url=<span
               id="out_link"
-            >
-              link
-            </span>
-            &icebreaker=<span id="out_message"></span>&entry_point=post_cta
+              >link</span
+            >&icebreaker=<span id="out_message"></span>&entry_point=post_cta
 
             <span id="out_image">image</span>
           </p>
@@ -57,15 +55,31 @@
       </div>
     </div>
     <script>
+      // Inputs
       var message = document.getElementById("message");
-      var phone = document.getElementById("phone");
+      var phone = document.getElementById("number");
       var links = document.getElementById("links");
       var image = document.getElementById("image");
       var output = document.getElementById("output_html");
 
-      // message.oninput = function () {
-      //   output.innerHTML = message.value;
-      // };
+      // Outputs
+      var out_phone = document.getElementById("out_phone");
+      var out_message = document.getElementById("out_message");
+      var out_link = document.getElementById("out_link");
+      var out_image = document.getElementById("out_image");
+
+      phone.oninput = function () {
+        out_phone.innerHTML = phone.value;
+      };
+      message.oninput = function () {
+        out_message.innerHTML = message.value;
+      };
+      links.oninput = function () {
+        out_link.innerHTML = links.value;
+      };
+      image.oninput = function () {
+        out_image.innerHTML = image.value;
+      };
 
       // function generate() {
       //   var message_text = message.value;
