@@ -29,6 +29,21 @@
         >
           <p id="output_html">Hello</p>
         </div>
+        <div
+          style="text-align: left; position: relative; left: 5.7vw; top: 10px"
+        >
+          <button
+            style="
+              background: #7d7d7d;
+              border: none;
+              padding: 10px 30px;
+              border-radius: 3px;
+              color: white;
+            "
+          >
+            Generate
+          </button>
+        </div>
       </div>
     </div>
     <script>
@@ -38,9 +53,9 @@
       var image = document.getElementById("image");
       var output = document.getElementById("output_html");
 
-      message.oninput = function () {
-        output.innerHTML = message.value;
-      };
+      // message.oninput = function () {
+      //   output.innerHTML = message.value;
+      // };
 
       // function generate() {
       //   var message_text = message.value;
