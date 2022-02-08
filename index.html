@@ -77,9 +77,18 @@
       links.oninput = function () {
         out_link.innerHTML = encodeURIComponent(links.value);
       };
-      image.oninput = function () {
-        out_image.innerHTML = image.value;
-      };
+
+      // copy value from input
+      function copy() {
+        output.select();
+        document.execCommand("copy");
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.keyCode == 67 && e.ctrlKey) {
+          copy();
+          console.log(" Copied to clipboard");
+        }
+      });
     </script>
   </body>
 </html>
