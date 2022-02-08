@@ -69,13 +69,13 @@
       var out_image = document.getElementById("out_image");
 
       phone.oninput = function () {
-        out_phone.innerHTML = phone.value;
+        out_phone.innerHTML = encodeURIComponent(phone.value);
       };
       message.oninput = function () {
-        out_message.innerHTML = message.value;
+        out_message.innerHTML = encodeURIComponent(message.value);
       };
       links.oninput = function () {
-        out_link.innerHTML = links.value;
+        out_link.innerHTML = encodeURIComponent(links.value);
       };
       image.oninput = function () {
         out_image.innerHTML = image.value;
