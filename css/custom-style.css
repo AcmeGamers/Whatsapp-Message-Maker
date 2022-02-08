@@ -90,6 +90,7 @@
 .thm-btn:active {
   background: #f3f3f3;
 }
+#output_html,
 input {
   padding: 20px 50px 20px 1rem;
   border-radius: 5px;

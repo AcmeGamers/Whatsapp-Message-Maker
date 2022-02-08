@@ -11,67 +11,75 @@
   <body class="thm_bg white_color" style="margin-top: 50px">
     <div class="column fl_verti_center fl_hori_center">
       <h1>WA.ME Generator</h1>
+
       <div class="form-interior white_bg txt_center">
         <div class="form flex fl_verti_center">
           <div class="message left-side">
-            <input type="text" placeholder="Phone Number" />
-            <input type="text" placeholder="Message" />
-            <input type="text" placeholder="Links" />
-            <input type="text" placeholder="Image" />
+            <input type="text" placeholder="Phone Number" id="number" />
+            <input type="text" placeholder="Message" id="message" />
+            <input type="text" placeholder="Links" id="link" />
+            <input type="text" placeholder="Image" image="image" />
           </div>
         </div>
-        <div id="code_output" style="margin-top: 30px">
-          <code id="output_html"></code>
+
+        <div
+          id="code_output"
+          class="flex fl_hori_center"
+          style="margin-top: 20px"
+        >
+          <p id="output_html">Hello</p>
         </div>
       </div>
     </div>
     <script>
-      // Initialize QUill editor
+      var message = document.getElementById("message");
+      var phone = document.getElementById("phone");
+      var links = document.getElementById("links");
+      var image = document.getElementById("image");
+      var output = document.getElementById("output_html");
 
-      function updateHTML() {
-        document.getElementById("output_html").innerText = quill.root.innerHTML;
-        document.getElementById("output_formatted_html").innerText = format(
-          quill.root.innerHTML
-        );
-      }
+      message.oninput = function () {
+        output.innerHTML = message.value;
+      };
 
-      function selectText(node) {
-        node = document.getElementById(node);
-        // Seclting Data
-        if (document.body.createTextRange) {
-          const range = document.body.createTextRange();
-          range.moveToElementText(node);
-          range.select();
-        } else if (window.getSelection) {
-          const selection = window.getSelection();
-          const range = document.createRange();
-          range.selectNodeContents(node);
-          selection.removeAllRanges();
-          selection.addRange(range);
-        } else {
-          alert("Could not select text in node: Unsupported browser.");
-        }
-      }
+      // function generate() {
+      //   var message_text = message.value;
+      //   var phone_number = phone.value;
+      //   var links_text = links.value;
+      //   var image_text = image.value;
 
-      // Performing Copy Action
-      document.addEventListener("copy", (event) => {
-        console.log("copy action initiated");
-        selectText("output_html");
-        event.clipboardData.setData("text/plain");
-      });
+      //   var output_text =
+      //     '<a href="https://api.whatsapp.com/send?phone=' +
+      //     phone_number +
+      //     "&text=" +
+      //     message_text +
+      //     '">' +
+      //     message_text +
+      //     "</a>";
 
-      // Adding Input Check Support
-      document.addEventListener("keydown", function (event) {
-        var minified_html_checkbox = document.querySelector(
-          "#minified_html_checkbox > p > input"
-        );
-        var formatted_html_checkbox = document.querySelector(
-          "#formatted_html_checkbox > p > input"
-        );
-        var both_html_checkbox = document.querySelector(
-          "#both_html_checkbox > p > input"
-        );
-      });
+      //   if (links_text) {
+      //     output_text +=
+      //       '<a href="' +
+      //       links_text +
+      //       '" target="_blank">' +
+      //       links_text +
+      //       "</a>";
+      //   }
+
+      //   if (image_text) {
+      //     output_text +=
+      //       '<img src="' +
+      //       image_text +
+      //       '" style="width: 100%; height: auto; max-width: 100%; max-height: 100%;">';
+      //   }
+
+      //   output.value = output_text;
+      // }
+
+      // message.addEventListener("keyup", generate);
+      // phone.addEventListener("keyup", generate);
+      // links.addEventListener("keyup", generate);
+      // image.addEventListener("keyup", generate);
     </script>
   </body>
 </html>

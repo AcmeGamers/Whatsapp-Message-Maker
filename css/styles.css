@@ -16,3 +16,10 @@ body {
   width: calc(var(--vw-70) / 3);
   margin: 10px 1rem;
 }
+
+#output_html {
+  text-align: left;
+  width: calc(var(--vw-70) / 1.3);
+  color: #757575;
+  font-size: 14px;
+}
