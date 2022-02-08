@@ -5,19 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Whatsapp Message Generator</title>
+    <link rel="stylesheet" href="./css/custom-style.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
-    Well then, Say hello to Whatsapp Message Generator. More like, wa.me
-    generator.
-
-    <div class="form">
-      <div class="message left-side">
-        <input type="text" placeholder="Phone Number" />
-        <input type="text" placeholder="Message" />
-        <input type="text" placeholder="Links" />
-        <input type="text" placeholder="Image" />
+  <body class="thm_bg white_color" style="margin-top: 50px">
+    <div class="column fl_verti_center fl_hori_center">
+      <h1>WA.ME Generator</h1>
+      <div class="form-interior white_bg txt_center">
+        <div class="form flex fl_verti_center">
+          <div class="message left-side">
+            <input type="text" placeholder="Phone Number" />
+            <input type="text" placeholder="Message" />
+            <input type="text" placeholder="Links" />
+            <input type="text" placeholder="Image" />
+          </div>
+        </div>
+        <div id="code_output" style="margin-top: 30px">
+          <code id="output_html"></code>
+        </div>
       </div>
-      <div class="display right-side"></div>
     </div>
+    <script>
+      // Initialize QUill editor
+
+      function updateHTML() {
+        document.getElementById("output_html").innerText = quill.root.innerHTML;
+        document.getElementById("output_formatted_html").innerText = format(
+          quill.root.innerHTML
+        );
+      }
+
+      function selectText(node) {
+        node = document.getElementById(node);
+        // Seclting Data
+        if (document.body.createTextRange) {
+          const range = document.body.createTextRange();
+          range.moveToElementText(node);
+          range.select();
+        } else if (window.getSelection) {
+          const selection = window.getSelection();
+          const range = document.createRange();
+          range.selectNodeContents(node);
+          selection.removeAllRanges();
+          selection.addRange(range);
+        } else {
+          alert("Could not select text in node: Unsupported browser.");
+        }
+      }
+
+      // Performing Copy Action
+      document.addEventListener("copy", (event) => {
+        console.log("copy action initiated");
+        selectText("output_html");
+        event.clipboardData.setData("text/plain");
+      });
+
+      // Adding Input Check Support
+      document.addEventListener("keydown", function (event) {
+        var minified_html_checkbox = document.querySelector(
+          "#minified_html_checkbox > p > input"
+        );
+        var formatted_html_checkbox = document.querySelector(
+          "#formatted_html_checkbox > p > input"
+        );
+        var both_html_checkbox = document.querySelector(
+          "#both_html_checkbox > p > input"
+        );
+      });
+    </script>
   </body>
 </html>

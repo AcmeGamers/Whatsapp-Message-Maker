@@ -1,21 +1,10 @@
 /* Root Elements */
 :root {
-  --theme-color: #72bbef;
-  --theme-color-depth-v1: #2a9ae9;
-  --theme-color-depth-v2: #1d88d4;
+  --theme-color: #1e41ce;
   --main-font: "Roboto", sans-serif;
 
   /* Custom Colors */
-  --light-grey: #e6e6e6;
-  --gold: #ffb80c;
-  --grey: #f1f1f1;
-  --pink: #f1a3b4;
-  --light-text-grey: #575757;
-  --font-thm-color: #6689ce;
-  --filter-black: invert(100%) sepia(0%) saturate(0%) hue-rotate(156deg)
-    brightness(101%) contrast(100%);
-  --filter-white: invert(0%) sepia(0%) saturate(0%) hue-rotate(156deg)
-    brightness(101%) contrast(100%);
+  --grey: #f3f3f3;
 
   /* Transition */
   --ease_p2_s: 0.2s ease all;
@@ -23,28 +12,20 @@
 
   /* Border Colors */
   --border-color-light-black: 1px solid rgb(0 0 0 / 16%);
+
+  /* Widths */
+  --vw-70: 70vw;
+
+  /* Shadow */
 }
 
 /* Custom Properties For Page */
-.main_thm_background {
+.thm_bg {
   background: var(--theme-color);
 }
-.main_thm_background_depth_1 {
-  background: var(--theme-color-depth-v1);
-}
-.main_thm_background_depth_2 {
-  background: var(--theme-color-depth-v2);
-}
-.main_thm_color {
+.thm_color {
   color: var(--theme-color);
 }
-.main_thm_color_depth_1 {
-  color: var(--theme-color-depth-v1);
-}
-.main_thm_color_depth_2 {
-  color: var(--theme-color-depth-v2);
-}
-
 .white_bg {
   background: #fff;
 }
@@ -92,7 +73,9 @@
 .fl_end {
   justify-content: flex-end;
 }
-
+.txt_center {
+  text-align: center;
+}
 /* Components */
 .thm-btn {
   background: #fff;
@@ -108,7 +91,12 @@
   background: #f3f3f3;
 }
 input {
-  padding: 5px 50px 5px 1rem;
+  padding: 20px 50px 20px 1rem;
+  border-radius: 5px;
+  background-color: var(--grey);
+  outline: none;
+  border: none;
+  box-shadow: 3px 2px 6px #00000047;
 }
 
 /* Custom Spacing */
