@@ -10,7 +10,7 @@
   </head>
   <body class="thm_bg white_color" style="margin-top: 50px">
     <div class="column fl_verti_center fl_hori_center">
-      <h1>WA.ME Generator</h1>
+      <h1>Whatsapp Message Generator</h1>
 
       <div class="form-interior white_bg txt_center">
         <div class="form flex fl_verti_center">
@@ -27,14 +27,13 @@
           class="flex fl_hori_center"
           style="margin-top: 20px"
         >
-          <p id="output_html">
-            https://api.whatsapp.com/send?phone=<span id="out_phone">phone</span
+          <p id="output_html" style="overflow-wrap: break-word">
+            https://api.whatsapp.com/send?phone=+<span id="out_phone"
+              >phone</span
             >&text=<span id="out_message">message</span>&source_url=<span
               id="out_link"
               >link</span
-            >&icebreaker=<span id="out_message"></span>&entry_point=post_cta
-
-            <span id="out_image">image</span>
+            >&icebreaker=<span id="out_message_2"></span>&entry_point=post_cta
           </p>
         </div>
         <!-- <div
@@ -65,6 +64,7 @@
       // Outputs
       var out_phone = document.getElementById("out_phone");
       var out_message = document.getElementById("out_message");
+      var out_message_2 = document.getElementById("out_message_2");
       var out_link = document.getElementById("out_link");
       var out_image = document.getElementById("out_image");
 
@@ -73,6 +73,7 @@
       };
       message.oninput = function () {
         out_message.innerHTML = encodeURIComponent(message.value);
+        out_message_2.innerHTML = encodeURIComponent(message.value);
       };
       links.oninput = function () {
         out_link.innerHTML = encodeURIComponent(links.value);
@@ -80,8 +81,11 @@
 
       // copy value from input
       function copy() {
-        output.select();
-        document.execCommand("copy");
+        var range = document.createRange();
+        var selection = window.getSelection();
+        range.selectNodeContents(output);
+        selection.removeAllRanges();
+        selection.addRange(range);
       }
       document.addEventListener("keydown", function (e) {
         if (e.keyCode == 67 && e.ctrlKey) {
