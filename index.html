@@ -7,7 +7,7 @@
     <title>Whatsapp Message Generator</title>
     <link rel="stylesheet" href="./css/custom-style.css" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <script src="https://raw.githubusercontent.com/AcmeGamers/Public-Updates/main/code-files/js/templates/acme-footer.js"></script>
+    
   </head>
   <body class="thm_bg white_color" style="margin-top: 50px">
     <div class="column fl_verti_center fl_hori_center">
@@ -54,7 +54,33 @@
         </div> -->
       </div>
     </div>
-    <define-acme></define-acme>
+    <style>
+            footer {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 60px;
+              background: #5c5c5c;
+              display: grid;
+              align-items: center;
+              justify-content: center;
+            }
+
+            footer > div > p > a {
+              color: #fff;
+            }
+
+          </style>
+          <footer>
+            <div>
+              <p>
+                A github repository created by
+                <a href="https://github.com/AcmeGamers">Acme Gamers</a>
+              </p>
+            </div>
+          </footer>
+          
 
     <script>
       // Inputs
@@ -96,47 +122,6 @@
           console.log(" Copied to clipboard");
         }
       });
-    </script>
-    <script>
-    // Footer most of my web applications
-class gitRepo extends HTMLElement {
-        constructor() {
-          super();
-        }
-        connectedCallback() {
-          this.innerHTML = `
-          <style>
-            footer {
-              position: fixed;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              height: 60px;
-              background: #5c5c5c;
-              display: grid;
-              align-items: center;
-              justify-content: center;
-            }
-
-            footer > div > p > a {
-              color: #fff;
-            }
-
-          </style>
-          <footer>
-            <div>
-              <p>
-                A github repository created by
-                <a href="https://github.com/AcmeGamers">Acme Gamers</a>
-              </p>
-            </div>
-          </footer>
-          
-          `;
-        }
-      }
-
-      customElements.define("define-acme", gitRepo);
     </script>
   </body>
 </html>
