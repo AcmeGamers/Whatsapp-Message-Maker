@@ -13,7 +13,7 @@ body {
 }
 
 .form > div > input {
-  width: calc(var(--vw-70) / 1.3);
+  width: calc(var(--vw-70) / 3);
   margin: 10px 1rem;
 }
 
